@@ -1,0 +1,32 @@
+.row
+  .col-md-12
+    = link_to 'Back', @book, class: 'btn btn-primary pull-left'
+    = link_to 'Edit', edit_book_transaction_path(@book, @transaction), class: 'btn btn-warning pull-left'
+
+.row
+  .col-md-6.col-md-offset-3
+    table.table
+      tbody
+        tr
+          th Entry
+          td = @transaction.entry
+        tr
+          th Item
+          td = @transaction.item
+        tr
+          th Amount
+          td = number_to_currency(@transaction.amount, unit: 'MYR ')
+        tr
+          th Date
+          td = @transaction.transacted_at
+        tr
+          th Transaction Method
+          td = @transaction.transaction_method
+        - if @transaction.notes.present?
+          tr
+            th Notes
+            td = @transaction.notes
+        - if @transaction.receipt_url.present?
+          tr
+            th Receipt
+            td = image_tag @transaction.receipt_url

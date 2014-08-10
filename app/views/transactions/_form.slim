@@ -1,0 +1,11 @@
+= simple_form_for(@transaction, url: url, html: {class: 'form-horizontal' }) do |f|
+  = f.input :entry, as: :select, collection: Transaction::ENTRIES
+  = f.input :item
+  = f.input :amount
+  = f.input :currency, as: :select, collection: Transaction::CURENCIES
+  = f.input :transaction_method
+  = f.input :transacted_at, as: :date
+  = f.input :receipt_url
+  = f.input :notes, as: :text
+
+  = f.submit
