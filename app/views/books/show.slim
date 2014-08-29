@@ -15,7 +15,7 @@ h2 = @book.company
           th Amount
 
       tbody
-        tr = render :partial => "transactions/transaction", :collection => @debit_transactions
+        = render :partial => "transactions/transaction", :collection => @debit_transactions
         tr
           td
           td
@@ -33,7 +33,7 @@ h2 = @book.company
           th Amount
 
       tbody
-        tr = render :partial => "transactions/transaction", :collection => @credit_transactions
+        = render :partial => "transactions/transaction", :collection => @credit_transactions
         tr
           td
           td
@@ -52,4 +52,4 @@ h2 = @book.company
 .row
   .col-md-6
     h5 Nett
-    = number_to_currency(@total_credit_transactions - @total_debit_transactions, unit: 'MYR ')
+    = number_to_currency(@total_debit_transactions - @total_credit_transactions, unit: 'MYR ')

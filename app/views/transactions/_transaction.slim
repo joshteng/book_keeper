@@ -1,4 +1,5 @@
-td = transaction.transacted_at
-td = link_to transaction.item, book_transaction_path(@book, transaction)
-td = transaction.transaction_method
-td = number_to_currency(transaction.amount, unit: 'MYR ')
+tr
+  td = transaction.transacted_at
+  td = link_to transaction.item, book_transaction_path(@book, transaction)
+  td = transaction.transaction_method
+  td = number_to_currency(transaction.amount, unit: 'MYR ')
